@@ -1,5 +1,5 @@
 import MobileMenu from "../menu/mobile-menu";
-import { Box, Center, Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import logo from "../../assets/code.png";
 
 const mobileContainer = {

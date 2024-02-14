@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC } from "react";
+import { useState, useEffect, FC } from "react";
 
 interface Typewriter {
   text: string;
@@ -29,7 +29,7 @@ const TypewriterComponent: FC<Typewriter> = ({
   }, [currentIndex, delay, text]);
 
   if (currentIndex == text.length) {
-    const refresh = setTimeout(() => {
+    setTimeout(() => {
       setCurrentText("");
       setCurrentIndex(0);
     }, 1000);

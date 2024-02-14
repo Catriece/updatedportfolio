@@ -1,6 +1,5 @@
 import { FC } from "react";
 import {
-  Flex,
   Grid,
   GridItem,
   useMediaQuery,
@@ -12,7 +11,6 @@ import {
 import MobileHeaderComponent from "../components/header/mobile-header-component";
 import TypewriterComponent from "../components/typewriter/typewriter-component";
 import catriece from "../assets/catriece.png";
-import { stickyDiv } from "./style-home-page";
 import WhatsHappeningSection from "../sections/whats-happening";
 import ProjectSection from "../sections/projects/project-section";
 

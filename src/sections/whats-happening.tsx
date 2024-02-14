@@ -5,7 +5,6 @@ import {
   CardBody,
   Text,
   Flex,
-  List,
   ListItem,
   UnorderedList,
   Collapse,
