@@ -47,8 +47,10 @@ const ProjectSection = () => {
           <CardFooter w="100%">
             <Collapse in={isOpen} animateOpacity>
               <UnorderedList w="100%">
-                {project.techstack.map((stack) => (
-                  <ListItem fontWeight={400}>{stack}</ListItem>
+                {project.techstack.map((stack, index) => (
+                  <ListItem key={index} fontWeight={400}>
+                    {stack}
+                  </ListItem>
                 ))}
               </UnorderedList>
             </Collapse>

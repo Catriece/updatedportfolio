@@ -70,8 +70,10 @@ const WhatsHappeningSection = () => {
           <CardFooter w="100%">
             <Collapse in={isOpen} animateOpacity>
               <UnorderedList w="100%">
-                {happening.techstack.map((stack) => (
-                  <ListItem fontWeight={400}>{stack}</ListItem>
+                {happening.techstack.map((stack, index) => (
+                  <ListItem key={index} fontWeight={400}>
+                    {stack}
+                  </ListItem>
                 ))}
               </UnorderedList>
             </Collapse>
