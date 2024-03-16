@@ -1,91 +1,120 @@
 import { FC } from "react";
 import {
-  Grid,
-  GridItem,
   useMediaQuery,
   Image,
   Box,
   Center,
-  Divider,
+  SimpleGrid,
+  Button,
+  Stack,
+  Flex,
+  Kbd,
 } from "@chakra-ui/react";
-import MobileHeaderComponent from "../components/header/mobile-header-component";
-import TypewriterComponent from "../components/typewriter/typewriter-component";
-import catriece from "../assets/catriece.png";
 import WhatsHappeningSection from "../sections/whats-happening";
 import ProjectSection from "../sections/projects/project-section";
+import catriece from "../assets/catriece.png";
+import TypewriterComponent from "../components/typewriter/typewriter-component";
+import MyButton from "../components/buttons/button";
+import { MD_RADIUS } from "../styles/design-styles";
 
 const HomePage: FC = () => {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
   return (
-    <Grid
-      templateAreas={
-        isLargerThan600
-          ? `"header header"
-                  "nav main"
-                  "nav footer"`
-          : `"header"
-                  "main"
-                  "footer"`
-      }
-      gridTemplateRows={isLargerThan600 ? "50px 1fr 30px" : "8.5% 1fr 10%"}
-      gridTemplateColumns={isLargerThan600 ? "1fr" : "1fr"}
-      h="100vh"
-      w="100svw"
-      gap="1"
-      color="blackAlpha.700"
-      fontWeight="bold"
-      overflow={"scroll"}
-    >
-      {/* Keep header sticky */}
-      <GridItem
-        bg="gray.300"
-        position="sticky"
-        top={0}
-        area={"header"}
-        zIndex={9999}
-      >
-        {isLargerThan600 ? null : <MobileHeaderComponent />}
-      </GridItem>
+    // <Center>
+    //   <Grid
+    //     templateAreas={`"header"
+    //           "main"
+    //           "footer"`}
+    //     gridTemplateRows={"8.5% 1fr 10%"}
+    //     gridTemplateColumns={"1fr"}
+    //     h="100vh"
+    //     w="100vw"
+    //     color="blackAlpha.700"
+    //     fontWeight="bold"
+    //     overflow={"scroll"}
+    //   >
+    //     {/* Keep header sticky */}
+    //     <GridItem
+    //       bg={isLargerThan600 ? "green.300" : "gray.300"}
+    //       position="sticky"
+    //       top={0}
+    //       area={"header"}
+    //       zIndex={9999}
+    //     ></GridItem>
 
-      <Box>
-        {isLargerThan600 ? (
-          <GridItem bg="pink.300" area={"nav"}>
-            Nav
-          </GridItem>
-        ) : null}
-        <GridItem area={"main"}>
-          <Box sx={{ padding: "15px", maxHeight: "75vh" }}>
-            <Center>
-              <Image src={catriece} alt="Catriece-Collage" h="70vh" />
-            </Center>
+    //     {isLargerThan600 ? (
+    //       <GridItem bg="pink.300" area={"nav"}>
+    //         <Text pt={5} pl={3} fontSize={"2xl"} color="black">
+    //           Navigation
+    //         </Text>
+    //       </GridItem>
+    //     ) : null}
+    //     <GridItem area={"main"}>
+    //       <Box sx={{ padding: "15px", maxHeight: "75vh" }}></Box>
+    //       <Box sx={{ minHeight: "75px" }}>
+    //         <Center></Center>
+    //       </Box>
+    //       <Divider />
+    //       <Box mt="30px">
+    //         <Center>
+    //           <WhatsHappeningSection />
+    //         </Center>
+    //       </Box>
+    //       <Box mt="30px">
+    //         <Center>
+    //           <ProjectSection />
+    //         </Center>
+    //       </Box>
+    //     </GridItem>
+    //     <GridItem bg="blue.300" area={"footer"}>
+    //       Footer
+    //     </GridItem>
+    //   </Grid>
+    // </Center>
+    <SimpleGrid h={"100vh"} columns={isLargerThan600 ? 2 : 1} spacing={3}>
+      {/* <Center>
+        <Flex flexDirection={"column"}>
+          <Box>
+            <Image src={catriece} alt={"Catriece Collage"} h={"500px"} />
           </Box>
-          <Box sx={{ minHeight: "75px" }}>
-            <Center>
-              <TypewriterComponent
-                text="Hi, I'm Catriece :)"
-                delay={100}
-                fontsize={isLargerThan600 ? "40px" : "35px"}
-                fontcolor="Black"
-              />
-            </Center>
+          <Box h={"100px"} textAlign={"center"}>
+            <TypewriterComponent
+              text={"I'm Catriece"}
+              delay={300}
+              fontsize={"50px"}
+              fontcolor={"black"}
+            />
           </Box>
-          <Divider />
-          <Box mt="30px">
-            <Center>
-              <WhatsHappeningSection />
-            </Center>
-          </Box>
-          <Box mt="30px">
-            <Center>
-              <ProjectSection />
-            </Center>
-          </Box>
-        </GridItem>
-      </Box>
-      <GridItem bg="blue.300" area={"footer"}>
-        Footer
-      </GridItem>
-    </Grid>
+        </Flex>
+      </Center> */}
+      <Center>
+        <Box>
+          <Stack spacing={3}>
+            <MyButton
+              borderRadius={MD_RADIUS}
+              height="32pt"
+              label={"About Me"}
+            />
+            <MyButton
+              borderRadius={MD_RADIUS}
+              height="32pt"
+              label={"Current Projects"}
+            />
+            <MyButton
+              borderRadius={MD_RADIUS}
+              height="32pt"
+              label={"Past Projects"}
+            />
+            <MyButton borderRadius={MD_RADIUS} height="32pt" label={"Blog"} />
+            <MyButton
+              borderRadius={MD_RADIUS}
+              height="32pt"
+              label={"Code Challenges"}
+            />
+          </Stack>
+        </Box>
+      </Center>
+    </SimpleGrid>
   );
 };
 
