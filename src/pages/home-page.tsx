@@ -53,23 +53,11 @@ const HomePage: FC = () => {
         <Center>
           <Box>
             <Stack spacing={3}>
-              <MyButton variant={"primary"} height="32pt" label={"About Me"} />
-              <MyButton
-                variant={"secondary"}
-                height="32pt"
-                label={"Current Projects"}
-              />
-              <MyButton
-                variant={"tertiary"}
-                height="32pt"
-                label={"Past Projects"}
-              />
-              <MyButton variant={"primary"} height="32pt" label={"Blog"} />
-              <MyButton
-                variant={"secondary"}
-                height="32pt"
-                label={"Code Challenges"}
-              />
+              <MyButton variant={"primary"} label={"About Me"} />
+              <MyButton variant={"secondary"} label={"Current Projects"} />
+              <MyButton variant={"tertiary"} label={"Past Projects"} />
+              <MyButton variant={"primary"} label={"Blog"} />
+              <MyButton variant={"secondary"} label={"Code Challenges"} />
             </Stack>
           </Box>
         </Center>

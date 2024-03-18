@@ -3,11 +3,12 @@ import { defineStyleConfig } from "@chakra-ui/react";
 export const Button = defineStyleConfig({
   // baseStyle styles all buttons will have this in common
   baseStyle: {
+    minHeight: "32pt",
+    marginBottom: "16pt", // Make sure this is necessary for ALL buttons
     fontWeight: "bold",
     textTransform: "uppercase",
-    borderRadius: "4pt", // <-- border radius is same for all variants and sizes
+    borderRadius: "4pt",
   },
-  // Two sizes: sm and md
   sizes: {
     sm: {
       fontSize: "sm",
@@ -16,8 +17,8 @@ export const Button = defineStyleConfig({
     },
     md: {
       fontSize: "md",
-      px: 6, // <-- these values are tokens from the design system
-      py: 4, // <-- these values are tokens from the design system
+      px: 6, // Every 1 is based on 4px (or pt)
+      py: 4, // So 4 === 16px
     },
   },
   // Two variants: outline and solid
