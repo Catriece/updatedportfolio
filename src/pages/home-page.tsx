@@ -16,6 +16,7 @@ import catriece from "../assets/catriece.png";
 import TypewriterComponent from "../components/typewriter/typewriter-component";
 import MyButton from "../components/buttons/button";
 import { MD_RADIUS } from "../styles/design-styles";
+import CatrieceGif from "../components/gif/image";
 
 const HomePage: FC = () => {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
@@ -74,9 +75,7 @@ const HomePage: FC = () => {
     <SimpleGrid h={"100vh"} columns={isLargerThan600 ? 2 : 1} spacing={3}>
       {/* <Center>
         <Flex flexDirection={"column"}>
-          <Box>
-            <Image src={catriece} alt={"Catriece Collage"} h={"500px"} />
-          </Box>
+          
           <Box h={"100px"} textAlign={"center"}>
             <TypewriterComponent
               text={"I'm Catriece"}
@@ -87,7 +86,14 @@ const HomePage: FC = () => {
           </Box>
         </Flex>
       </Center> */}
-      <Center>
+      <Flex
+        flexDirection={"column"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Box>
+          <CatrieceGif />
+        </Box>
         <Box>
           <Stack spacing={3}>
             <MyButton
@@ -113,7 +119,7 @@ const HomePage: FC = () => {
             />
           </Stack>
         </Box>
-      </Center>
+      </Flex>
     </SimpleGrid>
   );
 };
