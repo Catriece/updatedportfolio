@@ -4,12 +4,12 @@ import { FC } from "react";
 interface Button {
   label: string;
   height: string;
-  borderRadius: string;
+  variant: string;
 }
 
-const MyButton: FC<Button> = ({ label, height, borderRadius }) => {
+const MyButton: FC<Button> = ({ label, height, variant }) => {
   return (
-    <Button h={height} borderRadius={borderRadius}>
+    <Button variant={variant} h={height}>
       {label}
     </Button>
   );

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import {
   useMediaQuery,
   Image,
@@ -19,6 +19,7 @@ import TypewriterComponent from "../components/typewriter/typewriter-component";
 import MyButton from "../components/buttons/button";
 import { MD_RADIUS } from "../styles/design-styles";
 import BottomNavigation from "../components/navigation/bottom-navigation";
+import { PageViewContext } from "../context/page-view";
 
 const HomePage: FC = () => {
   const [ISLARGERTHAN500] = useMediaQuery("(min-width: 500px)");
@@ -52,24 +53,20 @@ const HomePage: FC = () => {
         <Center>
           <Box>
             <Stack spacing={3}>
+              <MyButton variant={"primary"} height="32pt" label={"About Me"} />
               <MyButton
-                borderRadius={MD_RADIUS}
-                height="32pt"
-                label={"About Me"}
-              />
-              <MyButton
-                borderRadius={MD_RADIUS}
+                variant={"secondary"}
                 height="32pt"
                 label={"Current Projects"}
               />
               <MyButton
-                borderRadius={MD_RADIUS}
+                variant={"tertiary"}
                 height="32pt"
                 label={"Past Projects"}
               />
-              <MyButton borderRadius={MD_RADIUS} height="32pt" label={"Blog"} />
+              <MyButton variant={"primary"} height="32pt" label={"Blog"} />
               <MyButton
-                borderRadius={MD_RADIUS}
+                variant={"secondary"}
                 height="32pt"
                 label={"Code Challenges"}
               />
@@ -82,7 +79,7 @@ const HomePage: FC = () => {
           colSpan={ISLARGERTHAN500 ? 12 : 4}
           position={"fixed"}
           w={"100%"}
-          h="10%"
+          h="8%"
           bottom={0}
         >
           <BottomNavigation />

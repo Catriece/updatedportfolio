@@ -24,10 +24,10 @@ const BottomNavigation = () => {
       icon: <ArticleOutlinedIcon />,
       label: "Blog",
     },
-    // {
-    //   icon: <CodeOutlinedIcon />,
-    //   label: "Code",
-    // },
+    {
+      icon: <CodeOutlinedIcon />,
+      label: "Code",
+    },
   ];
 
   return (
