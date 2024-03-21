@@ -16,8 +16,6 @@ export const XXL_SPACE = "80pt";
 // Screen Sizes
 export const screenSize = () => {
   const [ISLARGERTHAN500] = useMediaQuery("(min-width: 500px)");
-  const [ISLARGERTHAN1200] = useMediaQuery("(min-width: 1200px)");
-  const [ISSMALLERTHAN300] = useMediaQuery("(max-width: 300px)");
 
   return ISLARGERTHAN500;
 };

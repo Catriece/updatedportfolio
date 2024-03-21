@@ -1,25 +1,19 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import {
   useMediaQuery,
-  Image,
   Box,
   Center,
-  SimpleGrid,
-  Button,
   Stack,
-  Flex,
-  Kbd,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
-import WhatsHappeningSection from "../sections/whats-happening";
-import ProjectSection from "../sections/projects/project-section";
-import catriece from "../assets/catriece.png";
-import TypewriterComponent from "../components/typewriter/typewriter-component";
+// import WhatsHappeningSection from "../sections/whats-happening";
+// import ProjectSection from "../sections/projects/project-section";
+// import catriece from "../assets/catriece.png";
+// import TypewriterComponent from "../components/typewriter/typewriter-component";
 import MyButton from "../components/buttons/button";
-import { MD_RADIUS } from "../styles/design-styles";
 import BottomNavigation from "../components/navigation/bottom-navigation";
-import { PageViewContext } from "../context/page-view";
+//import { PageViewContext } from "../context/page-view";
 
 const HomePage: FC = () => {
   const [ISLARGERTHAN500] = useMediaQuery("(min-width: 500px)");

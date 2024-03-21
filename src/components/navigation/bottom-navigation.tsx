@@ -1,5 +1,5 @@
-import { Box, Center, Code, Flex } from "@chakra-ui/react";
-import { SM_SPACE, XS_SPACE } from "../../styles/design-styles";
+import { Flex } from "@chakra-ui/react";
+import { SM_SPACE } from "../../styles/design-styles";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import Face2RoundedIcon from "@mui/icons-material/Face2Rounded";
 import ContentPasteRoundedIcon from "@mui/icons-material/ContentPasteRounded";
