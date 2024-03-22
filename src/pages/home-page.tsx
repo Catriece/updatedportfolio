@@ -13,11 +13,14 @@ import {
 // import TypewriterComponent from "../components/typewriter/typewriter-component";
 import MyButton from "../components/buttons/button";
 import BottomNavigation from "../components/navigation/bottom-navigation";
+import { usePageView } from "../context/page-view";
 //import { PageViewContext } from "../context/page-view";
 
 const HomePage: FC = () => {
   const [ISLARGERTHAN500] = useMediaQuery("(min-width: 500px)");
   const [ISLARGERTHAN600] = useMediaQuery("(min-width: 600px)");
+
+  const { pageView, setPageView } = usePageView();
 
   const columns = ISLARGERTHAN500 ? "repeat(12, 1fr)" : "repeat(6, 1fr)";
 
@@ -38,7 +41,14 @@ const HomePage: FC = () => {
           </Box>
         </Flex>
       </Center> */}
-
+      <GridItem>
+        {pageView === "home" && "hi I'm home"}
+        {pageView === "about" && "hi I'm about"}
+        {pageView === "current" && "hi I'm curr"}
+        {pageView === "past" && "hi I'm past"}
+        {pageView === "blog" && "hi I'm blog"}
+        {pageView === "code" && "hi I'm chal"}
+      </GridItem>
       <GridItem
         placeSelf="center"
         colSpan={ISLARGERTHAN500 ? 6 : 4}
@@ -47,11 +57,31 @@ const HomePage: FC = () => {
         <Center>
           <Box>
             <Stack spacing={3}>
-              <MyButton variant={"primary"} label={"About Me"} />
-              <MyButton variant={"secondary"} label={"Current Projects"} />
-              <MyButton variant={"tertiary"} label={"Past Projects"} />
-              <MyButton variant={"primary"} label={"Blog"} />
-              <MyButton variant={"secondary"} label={"Code Challenges"} />
+              <MyButton
+                variant={"primary"}
+                label={"About Me"}
+                onClick={() => setPageView("about")}
+              />
+              <MyButton
+                variant={"secondary"}
+                label={"Current Projects"}
+                onClick={() => setPageView("current")}
+              />
+              <MyButton
+                variant={"tertiary"}
+                label={"Past Projects"}
+                onClick={() => setPageView("past")}
+              />
+              <MyButton
+                variant={"primary"}
+                label={"Blog"}
+                onClick={() => setPageView("blog")}
+              />
+              <MyButton
+                variant={"secondary"}
+                label={"Code Challenges"}
+                onClick={() => setPageView("code")}
+              />
             </Stack>
           </Box>
         </Center>
