@@ -40,7 +40,7 @@ const WhatsHappeningSection = () => {
       alignItems="center"
       w="100%"
     >
-      <Card align="center" w="95%" boxShadow="dark-lg" bg="purple.300" mb={5}>
+      <Card align="center" w="100%" boxShadow="dark-lg" bg="cyan.400" mb={5}>
         <CardHeader>
           <Heading size="md" fontSize={"2xl"}>
             Current Happenings:
@@ -48,13 +48,21 @@ const WhatsHappeningSection = () => {
         </CardHeader>
       </Card>
       {currenthappenings.map((happening, index) => (
-        <Card key={index} align="center" w="95%" boxShadow="dark-lg" mb={5}>
-          <CardHeader fontSize="xl" pb={0}>
-            {happening.title}
+        <Card key={index} w="100%" boxShadow="dark-lg" mb={5}>
+          <CardHeader fontSize="2xl" pb={2}>
+            <b>{happening.title}</b>
+            <br />
+            <Link
+              to={happening.link}
+              style={{
+                fontSize: "12pt",
+                fontWeight: 400,
+                textDecoration: "underline",
+              }}
+            >
+              <em>Click here to view project repo</em>
+            </Link>
           </CardHeader>
-          <Link to={happening.link} style={{ fontWeight: 400 }}>
-            <em>Click here to view project repo</em>
-          </Link>
           <CardBody padding="5px 20px">
             <Text>Description:</Text>
             <Text fontWeight={400}>{happening.description}</Text>

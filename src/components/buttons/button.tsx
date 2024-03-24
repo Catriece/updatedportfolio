@@ -5,11 +5,13 @@ interface Button {
   label: string;
   onClick: () => void;
   variant: string;
+  width?: string;
+  color?: string;
 }
 
-const MyButton: FC<Button> = ({ label, variant, onClick }) => {
+const MyButton: FC<Button> = ({ label, variant, onClick, width, color }) => {
   return (
-    <Button onClick={onClick} variant={variant}>
+    <Button mb={0} onClick={onClick} variant={variant} w={width} color={color}>
       {label}
     </Button>
   );

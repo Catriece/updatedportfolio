@@ -1,103 +1,83 @@
-import { FC } from "react";
 import {
+  Image,
+  Flex,
+  Text,
+  AspectRatio,
   useMediaQuery,
-  Box,
-  Center,
   Stack,
-  Grid,
-  GridItem,
+  Box,
+  Divider,
 } from "@chakra-ui/react";
-// import WhatsHappeningSection from "../sections/whats-happening";
-// import ProjectSection from "../sections/projects/project-section";
-// import catriece from "../assets/catriece.png";
-// import TypewriterComponent from "../components/typewriter/typewriter-component";
+import catriece from "../assets/catriece.png";
 import MyButton from "../components/buttons/button";
-import BottomNavigation from "../components/navigation/bottom-navigation";
 import { usePageView } from "../context/page-view";
-//import { PageViewContext } from "../context/page-view";
+import WhatsHappeningSection from "../sections/whats-happening";
 
-const HomePage: FC = () => {
-  const [ISLARGERTHAN500] = useMediaQuery("(min-width: 500px)");
-  const [ISLARGERTHAN600] = useMediaQuery("(min-width: 600px)");
+const HomePage = () => {
+  const [ISLARGERTHAN975] = useMediaQuery("(min-width: 975px)");
 
-  const { pageView, setPageView } = usePageView();
-
-  const columns = ISLARGERTHAN500 ? "repeat(12, 1fr)" : "repeat(6, 1fr)";
+  const { setPageView } = usePageView();
 
   return (
-    <Grid h={"100vh"} gridTemplateColumns={columns} gap={3}>
-      {/* <Center>
-        <Flex flexDirection={"column"}>
-          <Box>
-            <Image src={catriece} alt={"Catriece Collage"} h={"500px"} />
-          </Box>
-          <Box h={"100px"} textAlign={"center"}>
-            <TypewriterComponent
-              text={"I'm Catriece"}
-              delay={300}
-              fontsize={"50px"}
-              fontcolor={"black"}
-            />
-          </Box>
-        </Flex>
-      </Center> */}
-      <GridItem>
-        {pageView === "home" && "hi I'm home"}
-        {pageView === "about" && "hi I'm about"}
-        {pageView === "current" && "hi I'm curr"}
-        {pageView === "past" && "hi I'm past"}
-        {pageView === "blog" && "hi I'm blog"}
-        {pageView === "code" && "hi I'm chal"}
-      </GridItem>
-      <GridItem
-        placeSelf="center"
-        colSpan={ISLARGERTHAN500 ? 6 : 4}
-        colStart={ISLARGERTHAN500 ? 4 : 2}
+    <Box>
+      <Flex
+        flexDirection={ISLARGERTHAN975 ? "row" : "column"}
+        justifyContent={ISLARGERTHAN975 ? "space-between" : "center"}
+        alignItems="center"
+        h="90vh"
+        w={"100%"}
       >
-        <Center>
-          <Box>
-            <Stack spacing={3}>
-              <MyButton
-                variant={"primary"}
-                label={"About Me"}
-                onClick={() => setPageView("about")}
-              />
-              <MyButton
-                variant={"secondary"}
-                label={"Current Projects"}
-                onClick={() => setPageView("current")}
-              />
-              <MyButton
-                variant={"tertiary"}
-                label={"Past Projects"}
-                onClick={() => setPageView("past")}
-              />
-              <MyButton
-                variant={"primary"}
-                label={"Blog"}
-                onClick={() => setPageView("blog")}
-              />
-              <MyButton
-                variant={"secondary"}
-                label={"Code Challenges"}
-                onClick={() => setPageView("code")}
-              />
-            </Stack>
-          </Box>
-        </Center>
-      </GridItem>
-      {ISLARGERTHAN600 ? null : (
-        <GridItem
-          colSpan={ISLARGERTHAN500 ? 12 : 4}
-          position={"fixed"}
-          w={"100%"}
-          h="8%"
-          bottom={0}
+        <AspectRatio
+          minWidth={ISLARGERTHAN975 ? "200pt" : "50pt"}
+          maxWidth={ISLARGERTHAN975 ? "200pt" : "75pt"}
+          ratio={2 / 4}
         >
-          <BottomNavigation />
-        </GridItem>
-      )}
-    </Grid>
+          <Image src={catriece} alt="Catriece-Collage" />
+        </AspectRatio>
+        <Flex flexDirection="column" w={"60%"}>
+          <Stack spacing={6}>
+            <Text color="white" fontSize={"5xl"}>
+              I'm Catriece 👋{" "}
+            </Text>
+            <Text color="white" fontSize={"3xl"}>
+              Your <em>thoughtful, detailed oriented, and friendly </em>{" "}
+              neighborhood developer
+            </Text>
+            <Text color="white" fontSize={"xl"} margin={3}>
+              who is passionate about{" "}
+              <i>
+                <b>coding your ideas into reality</b>
+              </i>
+              .
+            </Text>
+            <Flex
+              flexDirection="column"
+              justifyContent={
+                ISLARGERTHAN975 ? "space-between" : "space-around"
+              }
+              w={"100%"}
+              h={"90pt"}
+            >
+              <MyButton
+                variant="primary"
+                label="Let's chat"
+                width={"100%"}
+                onClick={() => console.log("Chatting")}
+              />
+              <MyButton
+                variant="secondary"
+                label="Projects"
+                width={"100%"}
+                onClick={() => setPageView("projects")}
+              />
+            </Flex>
+          </Stack>
+        </Flex>
+      </Flex>
+      <Divider mt={10} mb={10} />
+
+      <WhatsHappeningSection />
+    </Box>
   );
 };
 
