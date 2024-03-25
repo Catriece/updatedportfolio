@@ -1,5 +1,6 @@
 import {
   Card,
+  Grid,
   CardBody,
   CardFooter,
   CardHeader,
@@ -14,18 +15,19 @@ import {
 import * as projects from "./project-list";
 import { Link } from "react-router-dom";
 const ProjectSection = () => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen: openTech, onToggle: toggleTech } = useDisclosure();
+  const { isOpen: openDesc, onToggle: toggleDesc } = useDisclosure();
   return (
-    <Flex flexDirection="column" justifyContent="center" alignItems="center">
-      <Card align="center" w="95%" boxShadow="dark-lg" bg="purple.300" mb={5}>
-        <CardHeader>
-          <Heading size="md" fontSize={"2xl"}>
-            Projects
-          </Heading>
-        </CardHeader>
-      </Card>
+    <Flex w={"100%"} justifyContent="space-between" flexWrap={"wrap"}>
       {projects.projects.map((project, index) => (
-        <Card key={index} align="center" w="95%" boxShadow="dark-lg" mb={5}>
+        <Card
+          key={index}
+          width={"210pt"}
+          height={"150pt"}
+          boxShadow="dark-lg"
+          textAlign="center"
+          margin={3}
+        >
           <CardHeader fontSize="xl" pb={0}>
             {project.name}
           </CardHeader>
@@ -33,19 +35,28 @@ const ProjectSection = () => {
             <em>{project.clicktext}</em>
           </Link>
           <CardBody padding="5px 20px">
-            <Text>Description:</Text>
-            <Text fontWeight={400}>{project.description}</Text>
+            <Text
+              paddingTop="10px"
+              fontWeight={600}
+              textAlign="center"
+              onClick={toggleDesc}
+            >
+              View Description
+            </Text>
+            <Collapse in={openDesc} animateOpacity>
+              <Text fontWeight={400}>{project.description}</Text>
+            </Collapse>
           </CardBody>
           <Text
             paddingTop="10px"
             fontWeight={600}
             textAlign="center"
-            onClick={onToggle}
+            onClick={toggleTech}
           >
             Click here to view techstack
           </Text>
           <CardFooter w="100%">
-            <Collapse in={isOpen} animateOpacity>
+            <Collapse in={openTech} animateOpacity>
               <UnorderedList w="100%">
                 {project.techstack.map((stack, index) => (
                   <ListItem key={index} fontWeight={400}>

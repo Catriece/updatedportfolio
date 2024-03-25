@@ -63,10 +63,6 @@ const BottomNavigation = () => {
           {option.label}
         </Flex>
       ))}
-      {/* <Box></Box>
-      <Box></Box>
-      <Box></Box>
-      <Box></Box> */}
     </Flex>
   );
 };

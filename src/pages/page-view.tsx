@@ -1,11 +1,11 @@
 import { FC } from "react";
 import {
   useMediaQuery,
-  Box,
-  Center,
-  Stack,
+  Text,
   Grid,
   GridItem,
+  Divider,
+  Center,
 } from "@chakra-ui/react";
 // import WhatsHappeningSection from "../sections/whats-happening";
 // import ProjectSection from "../sections/projects/project-section";
@@ -16,15 +16,18 @@ import BottomNavigation from "../components/navigation/bottom-navigation";
 import { usePageView } from "../context/page-view";
 import HomePage from "./home-page";
 import TopNavigation from "../components/navigation/top-navigation";
+import ContactForm from "../sections/contact/contact-me";
+import WhatsHappeningSection from "../sections/whats-happening";
+import ProjectSection from "../sections/projects/project-section";
 //import { PageViewContext } from "../context/page-view";
 
 const PageView: FC = () => {
-  const [ISLARGERTHAN500] = useMediaQuery("(min-width: 500px)");
+  const [ISLARGERTHAN750] = useMediaQuery("(min-width: 750px)");
   const [ISLARGERTHAN600] = useMediaQuery("(min-width: 600px)");
 
   const { pageView, setPageView } = usePageView();
 
-  const columns = ISLARGERTHAN500 ? "repeat(12, 1fr)" : "repeat(6, 1fr)";
+  const columns = ISLARGERTHAN750 ? "repeat(12, 1fr)" : "repeat(6, 1fr)";
 
   return (
     <Grid
@@ -40,11 +43,9 @@ const PageView: FC = () => {
     >
       <GridItem
         area="nav"
-        top={0}
         zIndex={2}
-        h="48pt"
         w="100%"
-        colSpan={ISLARGERTHAN500 ? 12 : 6}
+        colSpan={ISLARGERTHAN750 ? 12 : 6}
       >
         <TopNavigation />
       </GridItem>
@@ -53,19 +54,20 @@ const PageView: FC = () => {
         placeSelf="center"
         w={"100%"}
         h={"100%"}
-        colSpan={ISLARGERTHAN500 ? 10 : 6}
-        colStart={ISLARGERTHAN500 ? 2 : 1}
+        colSpan={ISLARGERTHAN750 ? 10 : 6}
+        colStart={ISLARGERTHAN750 ? 2 : 1}
       >
         {pageView === "home" && <HomePage />}
         {pageView === "about" && "hi I'm about"}
-        {pageView === "projects" && "hi I'm projs"}
+        {pageView === "projects" && <ProjectSection />}
         {pageView === "blog" && "hi I'm blog"}
         {pageView === "code" && "hi I'm chal"}
+        {pageView === "contact" && <ContactForm />}
       </GridItem>
       {/* <GridItem
         placeSelf="center"
-        colSpan={ISLARGERTHAN500 ? 6 : 4}
-        colStart={ISLARGERTHAN500 ? 4 : 2}
+        colSpan={ISLARGERTHAN750 ? 6 : 4}
+        colStart={ISLARGERTHAN750 ? 4 : 2}
       >
         <Center>
           <Box>
@@ -94,10 +96,29 @@ const PageView: FC = () => {
           </Box>
         </Center>
       </GridItem> */}
-      {ISLARGERTHAN600 ? null : (
+      {ISLARGERTHAN600 ? (
+        <>
+          <GridItem
+            area="footer"
+            colSpan={ISLARGERTHAN750 ? 12 : 5}
+            position={"fixed"}
+            w={"100%"}
+            h="10%"
+            bgColor="#000"
+            bottom={0}
+          >
+            <Center>
+              <Divider w={"90%"} mb={6} opacity={0.25} />
+            </Center>
+            <Center>
+              <Text color="white">Catriece Loves Code © </Text>
+            </Center>
+          </GridItem>
+        </>
+      ) : (
         <GridItem
           area="footer"
-          colSpan={ISLARGERTHAN500 ? 12 : 5}
+          colSpan={ISLARGERTHAN750 ? 12 : 5}
           position={"fixed"}
           w={"100%"}
           h="8%"
