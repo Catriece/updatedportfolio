@@ -5,16 +5,12 @@ import {
   AspectRatio,
   useMediaQuery,
   Stack,
-  Box,
-  Divider,
   ButtonGroup,
 } from "@chakra-ui/react";
 import catriece from "../assets/catriece.png";
 import catriecesideprofile from "../assets/catriecesideprofile.jpeg";
 import MyButton from "../components/buttons/button";
 import { usePageView } from "../context/page-view";
-import WhatsHappeningSection from "../sections/whats-happening";
-import LanguagesComponent from "../components/languages/languages";
 
 const HomePage = () => {
   const [ISSMALLERTHAN550] = useMediaQuery("(max-width: 550px)");

@@ -1,12 +1,10 @@
 import {
   Card,
-  Grid,
   CardBody,
   CardFooter,
   CardHeader,
   Collapse,
   Flex,
-  Heading,
   ListItem,
   Text,
   UnorderedList,

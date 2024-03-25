@@ -1,11 +1,10 @@
-import { Button, Flex, IconButton } from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
 import { SM_SPACE } from "../../styles/design-styles";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import Face2RoundedIcon from "@mui/icons-material/Face2Rounded";
 import ContentPasteRoundedIcon from "@mui/icons-material/ContentPasteRounded";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
-import MyButton from "../buttons/button";
 import { usePageView } from "../../context/page-view";
 
 const BottomNavigation = () => {
@@ -32,7 +31,7 @@ const BottomNavigation = () => {
     },
   ];
 
-  const { pageView, setPageView } = usePageView();
+  const { setPageView } = usePageView();
 
   return (
     <Flex

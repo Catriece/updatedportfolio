@@ -1,4 +1,4 @@
-import { createContext, useState, FC, useContext } from "react";
+import { createContext, useState, useContext } from "react";
 
 interface PageViewInterface {
   pageView: string;

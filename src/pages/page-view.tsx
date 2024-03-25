@@ -7,17 +7,12 @@ import {
   Divider,
   Center,
 } from "@chakra-ui/react";
-// import WhatsHappeningSection from "../sections/whats-happening";
-// import ProjectSection from "../sections/projects/project-section";
-// import catriece from "../assets/catriece.png";
-// import TypewriterComponent from "../components/typewriter/typewriter-component";
-import MyButton from "../components/buttons/button";
+
 import BottomNavigation from "../components/navigation/bottom-navigation";
 import { usePageView } from "../context/page-view";
 import HomePage from "./home-page";
 import TopNavigation from "../components/navigation/top-navigation";
 import ContactForm from "../sections/contact/contact-me";
-import WhatsHappeningSection from "../sections/whats-happening";
 import ProjectSection from "../sections/projects/project-section";
 //import { PageViewContext } from "../context/page-view";
 
@@ -25,7 +20,7 @@ const PageView: FC = () => {
   const [ISLARGERTHAN750] = useMediaQuery("(min-width: 750px)");
   const [ISLARGERTHAN600] = useMediaQuery("(min-width: 600px)");
 
-  const { pageView, setPageView } = usePageView();
+  const { pageView } = usePageView();
 
   const columns = ISLARGERTHAN750 ? "repeat(12, 1fr)" : "repeat(6, 1fr)";
 

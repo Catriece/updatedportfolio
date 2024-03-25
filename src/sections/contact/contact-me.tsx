@@ -1,9 +1,6 @@
 import {
-  Grid,
-  Card,
   Flex,
   Text,
-  Stack,
   Input,
   FormLabel,
   Box,
@@ -11,7 +8,6 @@ import {
   useMediaQuery,
   Button,
 } from "@chakra-ui/react";
-import { EmailIcon } from "@chakra-ui/icons";
 
 const ContactForm = () => {
   const [ISLARGERTHAN975] = useMediaQuery("(min-width: 975px)");

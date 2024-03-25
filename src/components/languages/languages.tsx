@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { Flex, Grid, useMediaQuery } from "@chakra-ui/react";
+import { FC } from "react";
+import { Flex, Grid } from "@chakra-ui/react";
 
 interface Languages {
   height: string;
