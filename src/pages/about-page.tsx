@@ -1,4 +1,3 @@
-import React from "react";
 import img from "../assets/about-me.png";
 import { Flex, Box, useMediaQuery } from "@chakra-ui/react";
 //import Heading from "../../components/heading";

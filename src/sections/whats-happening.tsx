@@ -8,8 +8,6 @@ import {
   ListItem,
   UnorderedList,
   Collapse,
-  useDisclosure,
-  CardFooter,
   Divider,
   useMediaQuery,
 } from "@chakra-ui/react";

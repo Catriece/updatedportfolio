@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import MyButton from "../buttons/button";
 import { usePageView } from "../../context/page-view";
-import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import clc from "../../assets/clc.png";
 
 const TopNavigation = () => {
