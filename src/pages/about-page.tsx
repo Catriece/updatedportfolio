@@ -15,10 +15,10 @@ const AboutPage = () => {
         height: "100%",
       }}
     >
-      <Box
+      <Flex
         style={
           ISLARGERTHAN750
-            ? { width: "40%" }
+            ? { width: "40%", justifyContent: "center", alignItems: "center" }
             : { width: "90%", justifyContent: "center", alignItems: "center" }
         }
       >
@@ -27,14 +27,24 @@ const AboutPage = () => {
           alt="catriece"
           style={{
             width: "90%",
+            maxWidth: "265pt",
             padding: "10px",
             height: "500px",
             left: "20px",
           }}
         />
-      </Box>
+      </Flex>
 
-      <Box style={ISLARGERTHAN750 ? { width: "60%", overflowY: "auto" } : {}}>
+      <Box
+        style={
+          ISLARGERTHAN750
+            ? {
+                width: "60%",
+                overflowY: "auto",
+              }
+            : {}
+        }
+      >
         <h1
           style={{
             marginBottom: "0px",
@@ -52,11 +62,12 @@ const AboutPage = () => {
         <p
           style={{
             lineHeight: "2rem",
-            textAlign: "center",
+            width: "80%",
             padding: "7px",
             fontSize: "17px",
             color: "white",
             marginBottom: 20,
+            marginLeft: "40pt",
           }}
         >
           <b>I am Catriece, S.D. (Software Developer 🤭).</b> <br />I have a

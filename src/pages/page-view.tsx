@@ -19,7 +19,7 @@ import AboutPage from "./about-page";
 
 const PageView: FC = () => {
   const [ISLARGERTHAN750] = useMediaQuery("(min-width: 750px)");
-  const [ISLARGERTHAN600] = useMediaQuery("(min-width: 600px)");
+  const [ISLARGERTHAN700] = useMediaQuery("(min-width: 700px)");
 
   const { pageView } = usePageView();
 
@@ -36,6 +36,7 @@ const PageView: FC = () => {
       gridTemplateColumns={columns}
       gap={3}
       bg={"#000"}
+      marginBottom={"45pt"}
     >
       <GridItem
         area="nav"
@@ -60,39 +61,8 @@ const PageView: FC = () => {
         {pageView === "code" && "hi I'm chal"}
         {pageView === "contact" && <ContactForm />}
       </GridItem>
-      {/* <GridItem
-        placeSelf="center"
-        colSpan={ISLARGERTHAN750 ? 6 : 4}
-        colStart={ISLARGERTHAN750 ? 4 : 2}
-      >
-        <Center>
-          <Box>
-            <Stack spacing={3}>
-              <MyButton
-                variant={"primary"}
-                label={"About Me"}
-                onClick={() => setPageView("about")}
-              />
-              <MyButton
-                variant={"secondary"}
-                label={"Projects"}
-                onClick={() => setPageView("projects")}
-              />
-              <MyButton
-                variant={"primary"}
-                label={"Blog"}
-                onClick={() => setPageView("blog")}
-              />
-              <MyButton
-                variant={"secondary"}
-                label={"Code Challenges"}
-                onClick={() => setPageView("code")}
-              />
-            </Stack>
-          </Box>
-        </Center>
-      </GridItem> */}
-      {ISLARGERTHAN600 ? (
+
+      {ISLARGERTHAN700 ? (
         <>
           <GridItem
             area="footer"

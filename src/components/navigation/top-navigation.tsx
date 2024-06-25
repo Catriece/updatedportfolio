@@ -1,7 +1,18 @@
-import { Box, Flex, useMediaQuery, Image, Center } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  useMediaQuery,
+  Image,
+  Center,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@chakra-ui/react";
 import MyButton from "../buttons/button";
 import { usePageView } from "../../context/page-view";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import clc from "../../assets/clc.png";
 
 const TopNavigation = () => {
@@ -51,7 +62,29 @@ const TopNavigation = () => {
           </>
         ) : (
           <Center>
-            <HamburgerIcon color="white" />
+            <Menu>
+              <MenuButton
+                as={Button}
+                variant={"primary"}
+                rightIcon={<ChevronDownIcon />}
+                mt={6}
+                mr={3}
+              >
+                Menu
+              </MenuButton>
+              <MenuList>
+                <MenuItem onClick={() => setPageView("home")}>Home</MenuItem>
+                <MenuItem onClick={() => setPageView("projects")}>
+                  Projects
+                </MenuItem>
+                <MenuItem onClick={() => setPageView("about")}>
+                  About Me
+                </MenuItem>
+                <MenuItem onClick={() => setPageView("contact")}>
+                  Hire Me
+                </MenuItem>
+              </MenuList>
+            </Menu>
           </Center>
         )}
       </Flex>

@@ -51,7 +51,6 @@ const ProjectSection = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        marginBottom: 100,
       }}
     >
       <Text style={{ color: "white", fontSize: "48pt", textAlign: "center" }}>
