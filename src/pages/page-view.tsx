@@ -14,6 +14,7 @@ import HomePage from "./home-page";
 import TopNavigation from "../components/navigation/top-navigation";
 import ContactForm from "../sections/contact/contact-me";
 import ProjectSection from "../sections/projects/project-section";
+import AboutPage from "./about-page";
 //import { PageViewContext } from "../context/page-view";
 
 const PageView: FC = () => {
@@ -53,7 +54,7 @@ const PageView: FC = () => {
         colStart={ISLARGERTHAN750 ? 2 : 1}
       >
         {pageView === "home" && <HomePage />}
-        {pageView === "about" && "hi I'm about"}
+        {pageView === "about" && <AboutPage />}
         {pageView === "projects" && <ProjectSection />}
         {pageView === "blog" && "hi I'm blog"}
         {pageView === "code" && "hi I'm chal"}

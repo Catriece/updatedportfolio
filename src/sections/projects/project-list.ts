@@ -5,6 +5,26 @@ import memorygame from "../../assets/project-images/memorygame.png";
 
 export const projects = [
   {
+    id: 5,
+    name: "SimplyDo: Task Application",
+    img: ttt,
+    date: "April 2024",
+    link: "https://github.com/Catriece/family-task-app",
+    techstack: [
+      "TypeScript",
+      "React",
+      "React Router",
+      "ChakraUI",
+      "Nodejs",
+      "NestJS",
+      "PostgreSQL w/TypeORM",
+    ],
+    clicktext:
+      "Click here to view the Repo. The Trello board is included in the Read.Me file.",
+    description:
+      "This React application was built over a ten week period during a Coding With Callie workshop. I participated in code reviews and built the ToDo application from the planning phase all the way through testing with Jest.",
+  },
+  {
     id: 4,
     name: "Tic-Tac-Toe: Animal Edition",
     img: ttt,
